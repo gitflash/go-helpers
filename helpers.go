@@ -20,3 +20,12 @@ func Shuffle(arr []int) {
 		arr = arr[:n-1]
 	}
 }
+
+func SeedIntSlice(length int, max int) []int {
+	r := rand.New(rand.NewSource(time.Now().Unix()))
+	arr := make([]int, length)
+	for i := 0; i < len(arr); i++ {
+		arr[i] = r.Intn(max)
+	}
+	return arr
+}
